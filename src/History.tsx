@@ -37,9 +37,9 @@ function History(){
             </tr>
             {his.map((e:any)=>{
                return <tr>
-                    <td>{e.total}</td>
+                    <td>{e.cpm}</td>
                     <td>{e.accuracyPercentage}</td>
-                    <td>{e.total-e.errors}</td>
+                    <td>{e.cpm-e.errors}</td>
                     <td>{e.errors}</td>
                     <td>{e.wpm}</td>
                     <td>{e.current_time}</td>
