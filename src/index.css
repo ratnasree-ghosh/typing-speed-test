@@ -13,12 +13,22 @@
   margin-top: 4rem;
 }
 
+#history-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+}
+
 .history-con{
   display: flex;
   justify-content: end;
   align-items: center;
   cursor: pointer;
 }
+
+
 
 
 #history{

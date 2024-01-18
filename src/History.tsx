@@ -17,8 +17,9 @@ function History(){
     console.log(his);
     return (
         
-        <>
-        {/* <div className="home-link"><a href="/">Home</a></div> */}
+        <div id="history-box">
+        
+        
         <div className='history-con'>
       <button id="history" onClick={()=> navigate('/')}>Home</button>
     </div>
@@ -52,7 +53,7 @@ function History(){
         
     }
         
-        </>
+        </div>
     )
     
 }
