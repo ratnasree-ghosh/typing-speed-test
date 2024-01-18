@@ -26,7 +26,7 @@ const Results = ({
     
     function isValid(){
        let res = localStorage.getItem('store');
-       console.log(res);
+    //    console.log(res);
        if(res === undefined || res=== null){
         return [];
        }else{
