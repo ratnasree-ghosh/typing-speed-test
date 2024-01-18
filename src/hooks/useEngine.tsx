@@ -18,7 +18,7 @@ const useEngine = (initialTime: number)=>{
 
 
     const [errors, setErrors] = useState(0);
-   
+     const [spaceCount, setSpaceCount] = useState(0);
     
     
     const isStarting = state === "start" && cursor > 0;
@@ -31,14 +31,18 @@ const useEngine = (initialTime: number)=>{
         setErrors(0);
         updateWords();
         clearTyped();
+        setSpaceCount(0);
 
       }, [clearTyped, updateWords, resetCountdown, resetTotalTyped]);
 
     const sumErrors = useCallback(()=>{
         const wordsReached = words.substring(0, Math.min(cursor, words.length));
+         var count = wordsReached.split(" ").length-1;
+         setSpaceCount((val)=> val+count);
+        console.log(spaceCount);
         setErrors((prevErr)=> prevErr + countErrors(typed, wordsReached));
 
-    }, [typed, words, cursor]);
+    }, [typed, words, cursor, spaceCount]);
 
     useEffect(() => {
         if (isStarting) {
@@ -68,7 +72,7 @@ const useEngine = (initialTime: number)=>{
 
       
 
-    return { state, words, timeLeft , typed, errors, totalTyped, restart};
+    return { state, words, timeLeft , typed, errors, totalTyped, restart, spaceCount};
 
 }
 

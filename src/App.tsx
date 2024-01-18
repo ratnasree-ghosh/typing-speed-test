@@ -25,7 +25,7 @@ function App() {
 
   const testBtnRef = useRef<HTMLButtonElement>(null);
 
-  let { state, words, timeLeft, typed, errors, restart, totalTyped } = useEngine(selectedTime);
+  let { state, words, timeLeft, typed, errors, restart, totalTyped , spaceCount} = useEngine(selectedTime);
 
   let count = 0;
   let store:any = [];
@@ -102,8 +102,9 @@ function App() {
       className={'mx-auto mt-10 text-slate-500'}/>
 
        
-      <Results state={state} errors={errors} className="mt-10" accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} total={totalTyped} correctTyped={totalTyped - errors} wpm={totalTyped / 5} />
+      <Results state={state} errors={errors} className="mt-10" accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} cpm={totalTyped} correctTyped={totalTyped - errors} wpm={spaceCount} />
 
+      
         
         
       {/* <Results state={results.state} errors={results.errors} className="mt-10" accuracyPercentage={calculateAccuracyPercentage(results.errors, results.totalTyped)} total={results.totalTyped} correctTyped={results.totalTyped - results.errors} wpm={results.totalTyped /5/results.time} /> */}

@@ -5,7 +5,7 @@ const Results = ({
     errors,
     state,
     accuracyPercentage,
-    total,
+    cpm,
     wpm,
     className="",
     correctTyped,
@@ -13,7 +13,7 @@ const Results = ({
     state: State
     errors: number;
     accuracyPercentage: number;
-    total: number;
+    cpm: number;
     wpm: number;
     correctTyped: number;
     className?: string;
@@ -38,7 +38,7 @@ const Results = ({
         let res = {
             errors,
             accuracyPercentage:formatPercentage(accuracyPercentage) ,
-            total,
+            cpm,
             wpm,
             correctTyped,
             current_time: new Date(),
@@ -58,7 +58,7 @@ const Results = ({
             <li>Accuracy: {formatPercentage(accuracyPercentage)}</li>
             <li className="text-red-500">Errors: {errors}</li>
             <li>WPM: {wpm}</li>
-            <li>Total Typed: {total}</li>
+            <li>CPM: {cpm}</li>
             <li>Correctly Typed: {correctTyped}</li>
 
         </ul>
