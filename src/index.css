@@ -9,6 +9,10 @@
   }
 }
 
+#root{
+  margin-top: 12rem;
+}
+
 .history-con{
   display: flex;
   justify-content: end;
