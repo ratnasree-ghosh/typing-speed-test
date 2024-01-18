@@ -27,17 +27,13 @@ function App() {
 
   let { state, words, timeLeft, typed, errors, restart, totalTyped , spaceCount} = useEngine(selectedTime);
 
-  let count = 0;
-  let store:any = [];
+  
   useEffect(() => {
     // Automatically click the startBtn when selectedTime changes
     if (testBtnRef.current) {
       testBtnRef.current.click();
     }
 
-    // if(errors){
-    //   localStorage.setItem("errors", JSON.stringify(errors));
-    // }
     
   }, [selectedTime]);
   
@@ -102,7 +98,7 @@ function App() {
       className={'mx-auto mt-10 text-slate-500'}/>
 
        
-      <Results state={state} errors={errors} className="mt-10" accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} cpm={totalTyped} correctTyped={totalTyped - errors} wpm={spaceCount} />
+      <Results state={state} errors={errors} className="mt-10" accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} cpm={totalTyped} correctTyped={totalTyped - errors} wpm={spaceCount} selectedTime={selectedTime}/>
 
       
         

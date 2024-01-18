@@ -29,15 +29,17 @@ function History(){
             <h1 style={{textAlign: 'center', marginBottom: '25px', fontSize: '23px'}}>History</h1>
         <table>
             <tr>
-                <th>Total Typed</th>
+                <th>Time</th>
+                <th>CPM</th>
                 <th>Accuracy Percentage</th>
-                <th>Correctly Typed</th>
+                <th>Correctly Typed(char)</th>
                 <th>Errors</th>
                 <th>WPM</th>
                 <th>Current Time</th>
             </tr>
             {his.map((e:any)=>{
                return <tr>
+                    <td>{e.selectedTime} sec</td>
                     <td>{e.cpm}</td>
                     <td>{e.accuracyPercentage}</td>
                     <td>{e.cpm-e.errors}</td>

@@ -9,6 +9,7 @@ const Results = ({
     wpm,
     className="",
     correctTyped,
+    selectedTime,
 }: {
     state: State
     errors: number;
@@ -17,6 +18,7 @@ const Results = ({
     wpm: number;
     correctTyped: number;
     className?: string;
+    selectedTime: number
 }) => {
 
     if(state !== 'finish'){
@@ -42,6 +44,7 @@ const Results = ({
             wpm,
             correctTyped,
             current_time: new Date(),
+            selectedTime,
         }
         let variable = isValid();
         // console.log(variable);
